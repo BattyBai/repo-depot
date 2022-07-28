@@ -1,7 +1,28 @@
-body {
-    background-color: #EBF2F9;
+body{
+   background-image: linear-gradient(to bottom right, #90f6d7, white);
+    background-attachment: fixed;
 }
 
 img {
-    transform: scale(0.5);
+    width: 20em;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15%;
+   margin-bottom: 5%;
+}
+
+.navbar {
+    float: right;
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 100px;
+    height: 70px;
+    text-align: center;
+    margin-top: 0%;
+}
+
+#content {
+    margin-left: 50%;
+    /* max-width: 60%; */
 }
