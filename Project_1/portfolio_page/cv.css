@@ -1,0 +1,14 @@
+#mainDiv {
+    white-space: nowrap;
+    overflow-x: auto;
+    background-color: blue;
+}
+
+.content {
+   display: inline-block;
+   margin-left: 20px; 
+}
+#pug {
+    border-radius: 40%;
+    width: 50%;  
+}
