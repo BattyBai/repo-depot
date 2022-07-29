@@ -81,3 +81,17 @@ img {
     list-style: none;
     padding-bottom: 10px;
 }
+.sectionEnd {
+    border-bottom: 1px black solid;
+    padding-bottom: 20px;
+}
+#techskills{
+    column-count: 2;
+    border-bottom: 1px gray solid;
+    text-align: center;
+    list-style: none;
+    padding-bottom: 10px;
+}
+.sectionHead {
+    text-align: center;
+}
