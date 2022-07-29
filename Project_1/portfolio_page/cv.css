@@ -1,23 +1,23 @@
 body { 
-    max-height: 2560;
-    max-width: 1600;
+    height: 0cm;
+}
+.navbar {
+    position: relative;
+    float: right;
 }
 #mainDiv {
-    white-space: nowrap;
-    overflow-x: auto;
+    padding-top: 25px;
+    position: relative;
+    margin: -1%;
     background-color: blue;
-    max-height: 1000px;
+    display: inline-block;
+
 }
 
-.content {
-   
-   display: inline-block;
-   margin-left: 20px; 
+.content { 
    background-color: blueviolet;
-   width: 100%;
-   white-space: pre-wrap;
-   overflow: hidden;
    
+
 }
 #pug {
     border-radius: 40%;
@@ -33,12 +33,11 @@ body {
 }
 
 #projectDiv {
-    min-height: 100%;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row; */
 }
 
 #resume {
-    display: inline;
+  background-color: red;
 }

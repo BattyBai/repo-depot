@@ -1,0 +1,83 @@
+body{
+    max-width: auto; 
+    max-height: ;
+	margin: 0 auto; 
+	float: none; 
+}
+.navbar {
+
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: black;
+
+}
+
+.navbar div {
+    padding: .5em 1em;
+    display: block;
+    color: aliceblue;
+    
+}
+
+#project {
+    margin-right: 25px;
+}
+.push {
+    margin-right: auto;
+    margin-left: 25px;
+}
+
+.content {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.footerLinks li {
+    padding: .5em 1em;
+    display: block;
+
+    color: aliceblue;
+}
+.about-me {
+    max-width: 800px;
+    margin: auto;
+}
+.image {
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+
+}
+
+img {
+    border-radius: 50%;
+    height:300px
+}
+.resume{
+    max-width: 800px;
+    margin: auto;
+
+}
+#title{
+    text-align: center;
+}
+#title-location {
+    text-align: center;
+}
+#skills-list{
+    column-count: 2;
+    border-bottom: 1px gray solid;
+    text-align: center;
+    list-style: none;
+    padding-bottom: 10px;
+}
