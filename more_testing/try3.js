@@ -1,17 +1,28 @@
 // START JQUERY AND JS CODE
 $(() => {
-
-    
-    $("#resumeButton").on('click', clickResume);
-    $("#homeButton").on('click', clickHome);
-    $("#projectButton").on('click', clickProject);
-    $("#contactButton").on('click', clickContact);
+const clickHome = () => {
+    $(".resume").slideUp(1000);
+    $(".about-me").slideUp(1000);
+}
+const clickAboutMe = () => {
+    $(".resume").slideUp(1000);
+    $(".about-me").slideDown(900);
+}
+const clickResume = () => {
+$(".about-me").slideUp(1000);
+$(".resume").slideDown(900);
+}
+    $("#home").on('click', clickHome);
+    $("#aboutme").on('click', clickAboutMe);
+    $("#resume").on('click', clickResume);
+    // $("#contactButton").on('click', clickContact);
 
    
-    $(".topbutton").hover(function(){
-        $(this).css("background-color", "yellow");
-        }, function(){
-        $(this).css("background-color", "");
-      })
+    // $(".topbutton").hover(function(){
+    //     $(this).css("background-color", "yellow");
+    //     }, function(){
+    //     $(this).css("background-color", "");
+    //   })
     
+
     })
