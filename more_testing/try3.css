@@ -23,7 +23,9 @@ body{
     color: aliceblue;
     
 }
-
+.project {
+    height: 800px;
+}
 #project {
     margin-right: 25px;
 }
@@ -72,7 +74,10 @@ img {
 .resume{
     max-width: 800px;
     margin: auto;
-
+    text-align: center;
+}
+iframe {
+    margin-top: 40px;
 }
 #title{
     text-align: center;
@@ -134,4 +139,10 @@ img {
     text-decoration: none;
     color: white;
 }
+#RPS_ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
 

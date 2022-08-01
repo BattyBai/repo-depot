@@ -1,22 +1,32 @@
 // START JQUERY AND JS CODE
 $(() => {
-
+// ON LOAD, HIDES ALL ELEMENTS FOR THE SPLASH PAGE
 $(".resume").hide()
 $(".about-me").hide()
 $(".project").hide()
 $(".dropdown").hide()
-    // BUTTON FUNCTIONALITY. WHEN CLICLING, SLIDES UP OR DOWN (HIDE/SHOWS) THE CURRENT TOPIC CLICKED 
+
+// BUTTON FUNCTIONALITY. WHEN CLICKLING, SLIDES UP OR DOWN (HIDE/SHOWS) THE CURRENT TOPIC CLICKED 
 const clickHome = () => {
     $(".resume").slideUp(1000);
     $(".about-me").slideUp(1000);
+    $(".project").slideUp(1000);
 }
 const clickAboutMe = () => {
     $(".resume").slideUp(1000);
+    $(".project").slideUp(1000)
     $(".about-me").slideDown(900);
 }
 const clickResume = () => {
     $(".about-me").slideUp(1000);
+    $(".project").slideUp(1000);
     $(".resume").slideDown(900);
+}
+
+const clickRPS = () => {
+    $(".about-me").slideUp(1000);
+    $(".resume").slideUp(1000);
+    $(".project").slideDown()
 }
 
 const $hoverColor= () => {
@@ -28,6 +38,13 @@ const $hoverColor= () => {
             $(this).css("background","transparent");
     });
     $(".push").hover(
+        function(){
+            $(this).css("background", "gray");
+    },
+        function(){
+            $(this).css("background","transparent");
+    });
+    $(".projectA").hover(
         function(){
             $(this).css("background", "gray");
     },
@@ -63,17 +80,6 @@ const $hoverDropDown = () => {
     }   
     )
 }
-// const $keepDropDown = () => {
-//     $("#project.li.a").mouseenter(
-//         function(){
-//             $(this).slideDown()
-//     })
-//     $(".project.li.a").mouseleave(
-//         function(){
-//             $(this).slideUp()
-//     })
-// }
-
 
 const $clickDropDown = () => {
     $("#project").click(
@@ -97,8 +103,6 @@ const $mediaQuery = () => {
 
 const options = ["rock", "paper", "scissors"];
 
-let userChooses = "";
-
 let computerChooses = () => {
   return options[Math.floor(Math.random() * 3)]
 };
@@ -106,37 +110,42 @@ let computerChooses = () => {
 
 compareChoices = (userChoice, computerChoice) => {
     if (userChoice === computerChoice){
-      return ("It's a tie! You chose " + userChoice + " and the computer chose " + computerChoice + ". Play again?")
+      return (`It's a tie! You chose ${userChoice} and the computer chose ${computerChoice}. Play again?`)
     } else if (userChoice === options[0] && computerChoice === options[2] ||
                userChoice === options[1] && computerChoice === options[0] || 
                userChoice === options[2] && computerChoice === options[1]) {
-      return ("You won! You chose " + userChoice + " and the computer chose " + computerChoice + ". Play again?")
+      return (`You won! You chose ${userChoice} and the computer chose ${computerChoice}. Play again?`)
     } else {
-      return ("You lost. You chose " + userChoice + " and the computer chose " + computerChoice + ". Play again?")
+      return (`You lost. You chose ${userChoice} and the computer chose ${computerChoice}. Play again?`)
     }
+  
 } 
 
 
 
-// FUNCTIONS CONNECTED TO THE ABOVE
+// JQUERY CONNECTED TO THE ABOVE
     $("#home").on('click', clickHome);
     $("#aboutme").on('click', clickAboutMe);
     $("#resume").on('click', clickResume);
-    $(".topbutton").on('hover', $hoverColor())
-    $("#paper").on('click', compareChoices("paper", computerChooses()))
-    $("#rock").on('click', compareChoices("rock", computerChooses()))
-    $("#scissors").on('click', compareChoices("scissors", computerChooses()))
+    $(".projectA").on('click', clickRPS)
+    $(".topbutton").on('hover', $hoverColor());
+
+    
+    $("#paper").on('click', function(){
+        let result = compareChoices("paper", computerChooses());
+        $("#resultContainer").text(result)
+    });
+    $("#rock").on('click', function(){
+        let result = compareChoices("rock", computerChooses());
+        $("#resultContainer").text(result)
+    });
+    $("#scissors").on('click', function(){
+        let result = compareChoices("scissors", computerChooses());
+        $("#resultContainer").text(result)
+    });
 
     $mediaQuery()
     $hoverPointer()
-
-    const playRPS = () => {
-        compareChoices (userChoice, computerChoice)
-        $('body').append('<p>You chose ' + userChoice + '</p>')
-        .append('<p>The computer chose ' + computerChoice + '</p>')
-        .append('<p>' + result + '</p>');
-    
-    }
 
 
    
