@@ -28,7 +28,7 @@ const clickRPS = () => {
     $(".resume").slideUp(1000);
     $(".project").slideDown()
 }
-
+// HOVER FUNCTIONALITY FOR THE NAVIGATION BAR AND DROP DOWN MENU
 const $hoverColor= () => {
     $(".topbutton").hover(
         function(){
@@ -53,6 +53,7 @@ const $hoverColor= () => {
     });
 }
 
+// SINCE NAVBAR CONSISTS OF DIVS AND NOT BUTTON TYPES, HAD TO MAKE THE CURSOR CHANGE TO A POINTER TO INDICATE THEY WERE BUTTONS 
 const $hoverPointer = () => {
     $(".topbutton").hover(
         function() {
@@ -70,6 +71,9 @@ const $hoverPointer = () => {
     });
 }
 
+
+
+// HOVER OVER FOR DROP DOWN MENU FUNCTIONALITY. WHEN NOT. USED SHOW/HIDE INSTEAD OF SLIDE METHOD. WHEN USING SLIDE, BUGS OCCUERED WITH CHILD DIVS (CONSTANT UP/DOWN INFINITELY)
 const $hoverDropDown = () => {
     $("#project, .dropdown").hover(
         function(){
@@ -81,6 +85,7 @@ const $hoverDropDown = () => {
     )
 }
 
+//CLICK INSTEAD OF HOVER WHEN ON MOBILE
 const $clickDropDown = () => {
     $("#project").click(
         function(){
@@ -89,6 +94,7 @@ const $clickDropDown = () => {
   )
 }
 
+// MEDIA QUERY THAT DETERMINES IF THE SCREEN SIZE IS BELOW A CERTAIN AMOUNT, USE THE CLICK FUNCTION INSTEAD OF HOVER
 const $mediaQuery = () => {
     if(window.matchMedia("(max-width: 767px)").matches){
         // The viewport is less than 768 pixels wide
@@ -100,14 +106,15 @@ const $mediaQuery = () => {
 };
 
 // Rock Paper Scissors JS Function
+// ===============================
 
+// ARRAY FOR COMPUTER TO "CHOOSE"
 const options = ["rock", "paper", "scissors"];
-
+// COMPUTER RANDOM CHOICE FUNCTION 
 let computerChooses = () => {
   return options[Math.floor(Math.random() * 3)]
 };
-
-
+// COMPARING THE CHOICES AND RETURNING THE RESULT
 compareChoices = (userChoice, computerChoice) => {
     if (userChoice === computerChoice){
       return (`It's a tie! You chose ${userChoice} and the computer chose ${computerChoice}. Play again?`)
@@ -118,9 +125,7 @@ compareChoices = (userChoice, computerChoice) => {
     } else {
       return (`You lost. You chose ${userChoice} and the computer chose ${computerChoice}. Play again?`)
     }
-  
 } 
-
 
 
 // JQUERY CONNECTED TO THE ABOVE
@@ -130,7 +135,9 @@ compareChoices = (userChoice, computerChoice) => {
     $(".projectA").on('click', clickRPS)
     $(".topbutton").on('hover', $hoverColor());
 
-    
+//ROCK PAPER SCISSORS RESULT TO USE IN THE DOM AND SHOW USER
+// USER CHOOSES ROCK PAPER OR SCISSORS WITH BUTTON ON PAGE 
+// EACH BUTTON TRIGGERS THE RPS FUNCTION WITH A THE ASSOCIATED BUTTON ARGUMENT AND COMPUTER "CHOICE"; COMPARES THEM. 
     $("#paper").on('click', function(){
         let result = compareChoices("paper", computerChooses());
         $("#resultContainer").text(result)
@@ -144,6 +151,7 @@ compareChoices = (userChoice, computerChoice) => {
         $("#resultContainer").text(result)
     });
 
+//ADDED THESE HERE, BECUASE I NEED TO CALL THEM FOR THEM TO WORK. DIDN'T KNOW WHERE TO PUT THEM. I GUESS I COULD PUT THEM UP ABOVE.  
     $mediaQuery()
     $hoverPointer()
 

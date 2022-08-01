@@ -4,31 +4,35 @@ body{
 	margin: 0 auto; 
     padding: 0;
 	float: none; 
+    background: #caf2e5;
+    min-height: 100vh;
+    
 }
+
 .navbar {
 
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: black;
+    background-color: #3c628a;
     /* height: 50px; */
-
-
 }
 
 .navbar div {
     padding: .5em 1em;
     display: block;
     color: aliceblue;
-    
 }
-.project {
-    height: 800px;
+
+.welcome{
+text-align: center ;
 }
+
 #project {
     margin-right: 25px;
 }
+
 .push {
     margin-right: auto;
     margin-left: 25px;
@@ -37,7 +41,9 @@ body{
 .content {
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 2.5rem;
 }
+
 /* find  out if the below does anything */
 .footerLinks {
     display: flex;
@@ -49,15 +55,23 @@ body{
     border-bottom: 1px solid;
     
 }
+
 /* find  out if the below does anything */
 .footerLinks li {
     padding: .5em 1em;
     display: block;
 }
+
 .about-me {
-    max-width: 800px;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(161, 181, 201);
+    border-radius: 20%;
 }
+
 .image {
     display: flex;
     justify-content: center;
@@ -69,57 +83,36 @@ img {
     border-radius: 50%;
     height:auto;
     width: 100%;
-    max-width: 300px
+    max-width: 300px;
+    border: 15px #455d7a solid;
 }
+
 .resume{
     max-width: 800px;
     margin: auto;
     text-align: center;
 }
+
 iframe {
-    margin-top: 40px;
+    margin-top: 20px;
+    height: 400px;
 }
-#title{
-    text-align: center;
-}
-#title-location {
-    text-align: center;
-}
-#skills-list{
-    column-count: 2;
-    border-bottom: 1px gray solid;
-    text-align: center;
-    list-style: none;
-    padding-bottom: 10px;
-}
-.sectionEnd {
-    border-bottom: 1px black solid;
-    padding-bottom: 20px;
-}
-#techskills{
-    column-count: 2;
-    border-bottom: 1px gray solid;
-    text-align: center;
-    list-style: none;
-    padding-bottom: 10px;
-}
-.sectionHead {
-    text-align: center;
-    
-}
+
 .footerNav{
     margin-top: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
 
 .dropdown {
-    float: left;
+    /* float: left; */
     position: absolute;
     list-style: none;
-    width: 100px;
-    background-color: black;
     margin: 0;
     padding:0;
-    /* margin-right: 40px; */
+    margin-right: 40px;
 }
 
 .dropdown li {
@@ -127,10 +120,11 @@ iframe {
    height: 40px;
    line-height: 40px;
    text-align: center;
-   background-color: black;
+   background-color: #455d7a;
    z-index: 1;
    position: relative;
 }
+
 .dropdown li a {
     border: 1px solid lightgray;
     width: 100%;
@@ -138,11 +132,68 @@ iframe {
     display: block;
     text-decoration: none;
     color: white;
+    overflow;
 }
+
 #RPS_ul {
     display: flex;
     list-style: none;
-    justify-content: space-around;
+    justify-content: center;
+    margin: 15px;
 }
 
+.project-square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: #98b8ae;
+    border-radius: 20%;
+    border: ;
+}
+
+/* @media (min-width: 600px){
+    iframe {
+        margin-top: 40px;
+        width: 300px;
+    }
+} */
+
+/* BELOW CODE NOT NECESSARY AS OF NOW. USED FOR RESUME FORMATTING */
+/*
+#title{
+    text-align: center;
+}
+
+#title-location {
+    text-align: center;
+}
+
+#skills-list{
+    column-count: 2;
+    border-bottom: 1px gray solid;
+    text-align: center;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.sectionEnd {
+    border-bottom: 1px black solid;
+    padding-bottom: 20px;
+}
+
+#techskills{
+    column-count: 2;
+    border-bottom: 1px gray solid;
+    text-align: center;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.sectionHead {
+    text-align: center;
+    
+}
+*/
 
