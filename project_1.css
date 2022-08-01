@@ -134,7 +134,7 @@ iframe {
     color: white;
 }
 
-.projectA{
+#problemchild{
     font-size:10px;
 }
 
@@ -147,6 +147,7 @@ iframe {
 
 .project-square {
     display: flex;
+    margin: auto;
     flex-direction: column;
     justify-content: center;
     width: 70%;
