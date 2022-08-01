@@ -132,7 +132,10 @@ iframe {
     display: block;
     text-decoration: none;
     color: white;
-    overflow;
+}
+
+.projectA{
+    font-size:10px;
 }
 
 #RPS_ul {
@@ -150,15 +153,7 @@ iframe {
     text-align: center;
     background-color: #98b8ae;
     border-radius: 20%;
-    border: ;
 }
-
-/* @media (min-width: 600px){
-    iframe {
-        margin-top: 40px;
-        width: 300px;
-    }
-} */
 
 /* BELOW CODE NOT NECESSARY AS OF NOW. USED FOR RESUME FORMATTING */
 /*
