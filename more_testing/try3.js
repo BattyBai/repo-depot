@@ -4,6 +4,7 @@ $(() => {
 $(".resume").hide()
 $(".about-me").hide()
 $(".project").hide()
+$(".dropdown").hide()
     // BUTTON FUNCTIONALITY. WHEN CLICLING, SLIDES UP OR DOWN (HIDE/SHOWS) THE CURRENT TOPIC CLICKED 
 const clickHome = () => {
     $(".resume").slideUp(1000);
@@ -20,29 +21,101 @@ const clickResume = () => {
 
 const $hoverColor= () => {
     $(".topbutton").hover(
-        function(){$(this).css("background", "gray");
+        function(){
+            $(this).css("background", "gray");
     },
-        function(){$(this).css("background","transparent");
+        function(){
+            $(this).css("background","transparent");
     });
     $(".push").hover(
-        function(){$(this).css("background", "gray");
+        function(){
+            $(this).css("background", "gray");
     },
-        function(){$(this).css("background","transparent");
+        function(){
+            $(this).css("background","transparent");
     });
 }
 
 const $hoverPointer = () => {
     $(".topbutton").hover(
-        function() {$(this).css('cursor','pointer');
+        function() {
+            $(this).css('cursor','pointer');
     }, 
-        function() {$(this).css('cursor','auto');
+        function() {
+            $(this).css('cursor','auto');
     });
     $(".push").hover(
-        function() {$(this).css('cursor','pointer');
+        function() {
+            $(this).css('cursor','pointer');
     }, 
-        function() {$(this).css('cursor','auto');
+        function() {
+            $(this).css('cursor','auto');
     });
 }
+
+const $hoverDropDown = () => {
+    $("#project, .dropdown").hover(
+        function(){
+            $(".dropdown").show()
+    },   
+        function(){
+            $(".dropdown").hide()
+    }   
+    )
+}
+// const $keepDropDown = () => {
+//     $("#project.li.a").mouseenter(
+//         function(){
+//             $(this).slideDown()
+//     })
+//     $(".project.li.a").mouseleave(
+//         function(){
+//             $(this).slideUp()
+//     })
+// }
+
+
+const $clickDropDown = () => {
+    $("#project").click(
+        function(){
+            $(".dropdown").slideToggle()
+    },
+  )
+}
+
+const $mediaQuery = () => {
+    if(window.matchMedia("(max-width: 767px)").matches){
+        // The viewport is less than 768 pixels wide
+        $clickDropDown();
+    } else{
+        // The viewport is at least 768 pixels wide
+        $hoverDropDown();
+    }
+};
+
+// Rock Paper Scissors JS Function
+
+const options = ["rock", "paper", "scissors"];
+
+let userChooses = "";
+
+let computerChooses = () => {
+  return options[Math.floor(Math.random() * 3)]
+};
+
+
+compareChoices = (userChoice, computerChoice) => {
+    if (userChoice === computerChoice){
+      return ("It's a tie! You chose " + userChoice + " and the computer chose " + computerChoice + ". Play again?")
+    } else if (userChoice === options[0] && computerChoice === options[2] ||
+               userChoice === options[1] && computerChoice === options[0] || 
+               userChoice === options[2] && computerChoice === options[1]) {
+      return ("You won! You chose " + userChoice + " and the computer chose " + computerChoice + ". Play again?")
+    } else {
+      return ("You lost. You chose " + userChoice + " and the computer chose " + computerChoice + ". Play again?")
+    }
+} 
+
 
 
 // FUNCTIONS CONNECTED TO THE ABOVE
@@ -50,18 +123,23 @@ const $hoverPointer = () => {
     $("#aboutme").on('click', clickAboutMe);
     $("#resume").on('click', clickResume);
     $(".topbutton").on('hover', $hoverColor())
-    $(".topbutton").on('hover', $hoverPointer())
+    $("#paper").on('click', compareChoices("paper", computerChooses()))
+    $("#rock").on('click', compareChoices("rock", computerChooses()))
+    $("#scissors").on('click', compareChoices("scissors", computerChooses()))
 
-    // $("#contactButton").on('click', clickContact);
+    $mediaQuery()
+    $hoverPointer()
+
+    const playRPS = () => {
+        compareChoices (userChoice, computerChoice)
+        $('body').append('<p>You chose ' + userChoice + '</p>')
+        .append('<p>The computer chose ' + computerChoice + '</p>')
+        .append('<p>' + result + '</p>');
+    
+    }
+
 
    
-    // $(".topbutton").hover(function(){
-    //     $(this).css("background-color", "yellow");
-    //     }, function(){
-    //     $(this).css("background-color", "");
-    //   })
+  
 
-
-    
-
-    })
+})
