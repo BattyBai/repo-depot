@@ -70,6 +70,7 @@ text-align: center ;
     text-align: center;
     background-color: rgb(161, 181, 201);
     border-radius: 20%;
+    margin: auto;
 }
 
 .image {
